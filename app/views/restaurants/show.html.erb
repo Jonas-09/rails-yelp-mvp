@@ -3,5 +3,14 @@
 <h3><%= @restaurant.phone_number %></h3>
 <h3><%= @restaurant.category %></h3>
 <hr>
-<%= link_to "Add a Review", restaurants_path %>
+<%= link_to "Add a Review", new_restaurant_review_path(@restaurant) %>
 <%= link_to "Back to overview", restaurants_path %>
+<hr>
+<h2>Reviews</h2>
+<% @restaurant.reviews.each do |review| %>
+  <div>
+    <strong>Rating:</strong> <%= review.rating %><br>
+    <strong>Content:</strong> <%= review.content %><br>
+  </div>
+  <hr>
+<% end %>

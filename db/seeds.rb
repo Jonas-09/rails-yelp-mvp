@@ -15,7 +15,8 @@ Restaurant.destroy_all
   Restaurant.create!(
     name: Faker::Restaurant.name,
     category: Restaurant::CATEGORIES.sample,
-    address: Faker::Address.city
+    address: Faker::Address.city,
+    phone_number: Faker::PhoneNumber.phone_number
   )
 end
 puts "... created #{Restaurant.count} restaurants"
